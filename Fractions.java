@@ -1,3 +1,5 @@
+import java.util.Random;
+
 public class Fractions {
     // insatnce variables (attributes, fields)
     private int numerator, denominator;
@@ -11,8 +13,9 @@ public class Fractions {
 
     // constructors
     public Fractions() { // default constructor
-        numerator = 1;
-        denominator = 2;
+        Random r = new Random();
+        numerator = 1+r.nextInt(10);
+        denominator = 1+r.nextInt(10);
     }
 
     public Fractions(int n, int d) { // parameterized constructor
@@ -45,8 +48,8 @@ public class Fractions {
     }
 
     public static Fractions div(Fractions a, Fractions b) {
-        int denominator = a.getDenom() / b.getDenom();
-        int numerator = a.getNum() / b.getNum();
+        int denominator = a.getDenom() * b.getNum();
+        int numerator = a.getNum() * b.getDenom();
         Fractions ans = new Fractions(numerator, denominator);
         return reduce(ans);
     }
@@ -86,6 +89,14 @@ public class Fractions {
         }
         return num;
     }
+
+public static boolean compare(Fractions a, Fractions b){
+	if(a.getNum() == b.getNum() && a.getDenom() == b.getDenom() ){
+		return true;
+	}
+	return false;
+}
+
 
 // behaviour methods (accessor, mutator, helper)
 
