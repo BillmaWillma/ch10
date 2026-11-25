@@ -12,7 +12,6 @@ public class EstimatingPi{
 				num++;
 			} else denom++;
 			guess = new Fractions(num, denom);	
-			System.out.println(guess);
 		}
 	Fractions ans = new Fractions (num, denom);
 	System.out.println(ans.toString());
