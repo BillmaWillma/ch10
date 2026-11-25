@@ -1,5 +1,3 @@
-
-
 public class EstimatingPi {
     public static void main(String[] args) {
         Fractions MILU = new Fractions(355, 113);
